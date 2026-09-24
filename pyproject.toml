@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "citius-api-python"
-version = "0.0.0.dev0+829237a51a11"
+version = "0.0.0.dev0+f3be1caaae6d"
 description = "Generated Python protobuf and gRPC bindings for the Citius API"
 readme = "README.md"
 license = "Apache-2.0"
