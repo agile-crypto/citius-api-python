@@ -1,0 +1,3 @@
+grpcio<2,>=1.84
+googleapis-common-protos<2,>=1.66
+protobuf>=7.36.1

@@ -1,0 +1,19 @@
+{
+  "format_version": 1,
+  "generation": {
+    "buf_template_sha256": "5be28b03b8b49cd1ca96d100d711f3b0c7b935c087b0fdc72275443f2d6e5ae0",
+    "generated_code_sha256": "b7338a557e81ce5074be95bc54ac0d0ea759fe6a819473391a9b83131efb1dd5",
+    "packager_sha256": "d4813543b33ca67be2cc3da0ab13c78ce4b4c1e949839b7ea659db3694e8cb62",
+    "schema_sha256": "d274ae1cfb848334f5199428332a2b04e13c1a29112e72eb3329fe41f9e05645",
+    "verification_workflow_sha256": "091f28b8e36b7ebae1e525bd958b7450f7a086166820c516267238251e37e5d1"
+  },
+  "package": {
+    "name": "citius-api-python",
+    "version": "0.2.0"
+  },
+  "source": {
+    "ref": "v0.2.0",
+    "repository": "agile-crypto/api",
+    "revision": "02a91c93615a743d9d49083828ce45f988e716d4"
+  }
+}

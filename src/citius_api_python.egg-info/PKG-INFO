@@ -1,3 +1,16 @@
+Metadata-Version: 2.4
+Name: citius-api-python
+Version: 0.2.0
+Summary: Generated Python protobuf and gRPC bindings for the Citius API
+License-Expression: Apache-2.0
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: grpcio<2,>=1.84
+Requires-Dist: googleapis-common-protos<2,>=1.66
+Requires-Dist: protobuf>=7.36.1
+Dynamic: license-file
+
 # citius-api-python
 
 Generated Python protobuf messages and gRPC service stubs for the Citius API.
