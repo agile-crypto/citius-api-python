@@ -162,7 +162,7 @@ class ScopedCapabilities(_message.Message):
     def __init__(self, scope: _Optional[_Union[_common_pb2.ScopeSpecification, _Mapping]] = ..., operations: _Optional[_Iterable[_Union[_common_pb2.CryptoOperation, str]]] = ..., security_guarantees: _Optional[_Union[_common_pb2.SecurityGuarantees, _Mapping]] = ...) -> None: ...
 
 class TemplateInfo(_message.Message):
-    __slots__ = ("template_id", "display_name", "description", "scoped_capabilities", "algorithm", "status", "deprecation_notice", "standards", "cyclonedx", "security_guarantees")
+    __slots__ = ("template_id", "display_name", "description", "scoped_capabilities", "algorithm", "status", "deprecation_notice", "standards", "cyclonedx", "security_guarantees", "key_material_family")
     TEMPLATE_ID_FIELD_NUMBER: _ClassVar[int]
     DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
@@ -173,6 +173,7 @@ class TemplateInfo(_message.Message):
     STANDARDS_FIELD_NUMBER: _ClassVar[int]
     CYCLONEDX_FIELD_NUMBER: _ClassVar[int]
     SECURITY_GUARANTEES_FIELD_NUMBER: _ClassVar[int]
+    KEY_MATERIAL_FAMILY_FIELD_NUMBER: _ClassVar[int]
     template_id: str
     display_name: str
     description: str
@@ -183,7 +184,8 @@ class TemplateInfo(_message.Message):
     standards: _containers.RepeatedScalarFieldContainer[str]
     cyclonedx: CycloneDXAlgorithmProperties
     security_guarantees: _common_pb2.SecurityGuarantees
-    def __init__(self, template_id: _Optional[str] = ..., display_name: _Optional[str] = ..., description: _Optional[str] = ..., scoped_capabilities: _Optional[_Iterable[_Union[ScopedCapabilities, _Mapping]]] = ..., algorithm: _Optional[_Union[AlgorithmDetails, _Mapping]] = ..., status: _Optional[_Union[TemplateStatus, str]] = ..., deprecation_notice: _Optional[str] = ..., standards: _Optional[_Iterable[str]] = ..., cyclonedx: _Optional[_Union[CycloneDXAlgorithmProperties, _Mapping]] = ..., security_guarantees: _Optional[_Union[_common_pb2.SecurityGuarantees, _Mapping]] = ...) -> None: ...
+    key_material_family: str
+    def __init__(self, template_id: _Optional[str] = ..., display_name: _Optional[str] = ..., description: _Optional[str] = ..., scoped_capabilities: _Optional[_Iterable[_Union[ScopedCapabilities, _Mapping]]] = ..., algorithm: _Optional[_Union[AlgorithmDetails, _Mapping]] = ..., status: _Optional[_Union[TemplateStatus, str]] = ..., deprecation_notice: _Optional[str] = ..., standards: _Optional[_Iterable[str]] = ..., cyclonedx: _Optional[_Union[CycloneDXAlgorithmProperties, _Mapping]] = ..., security_guarantees: _Optional[_Union[_common_pb2.SecurityGuarantees, _Mapping]] = ..., key_material_family: _Optional[str] = ...) -> None: ...
 
 class CycloneDXAlgorithmProperties(_message.Message):
     __slots__ = ("name", "primitive", "algorithm_family", "parameter_set_identifier", "elliptic_curve", "mode", "padding", "crypto_functions", "classical_security_level", "nist_quantum_security_level", "certification_level", "execution_environment", "implementation_platform", "oid")
