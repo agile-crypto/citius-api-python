@@ -1,3 +1,4 @@
+from citius_api.types import algorithm_params_pb2 as _algorithm_params_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -82,7 +83,7 @@ class ProviderOutput(_message.Message):
     def __init__(self, no_output: _Optional[_Union[NoAlgorithmOutput, _Mapping]] = ..., aead_output: _Optional[_Union[AeadOutput, _Mapping]] = ..., block_cipher_output: _Optional[_Union[BlockCipherOutput, _Mapping]] = ..., counter_mode_output: _Optional[_Union[CounterModeOutput, _Mapping]] = ..., stream_cipher_output: _Optional[_Union[StreamCipherOutput, _Mapping]] = ..., kdf_output: _Optional[_Union[KdfOutput, _Mapping]] = ..., vendor_output: _Optional[_Union[VendorOutput, _Mapping]] = ..., encoding: _Optional[str] = ...) -> None: ...
 
 class OperationMetadata(_message.Message):
-    __slots__ = ("key_version", "provider_output", "api_version", "user_context")
+    __slots__ = ("key_version", "provider_output", "api_version", "user_context", "digest_hash")
     class UserContextEntry(_message.Message):
         __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -94,8 +95,10 @@ class OperationMetadata(_message.Message):
     PROVIDER_OUTPUT_FIELD_NUMBER: _ClassVar[int]
     API_VERSION_FIELD_NUMBER: _ClassVar[int]
     USER_CONTEXT_FIELD_NUMBER: _ClassVar[int]
+    DIGEST_HASH_FIELD_NUMBER: _ClassVar[int]
     key_version: int
     provider_output: ProviderOutput
     api_version: str
     user_context: _containers.ScalarMap[str, str]
-    def __init__(self, key_version: _Optional[int] = ..., provider_output: _Optional[_Union[ProviderOutput, _Mapping]] = ..., api_version: _Optional[str] = ..., user_context: _Optional[_Mapping[str, str]] = ...) -> None: ...
+    digest_hash: _algorithm_params_pb2.HashAlgorithm
+    def __init__(self, key_version: _Optional[int] = ..., provider_output: _Optional[_Union[ProviderOutput, _Mapping]] = ..., api_version: _Optional[str] = ..., user_context: _Optional[_Mapping[str, str]] = ..., digest_hash: _Optional[_Union[_algorithm_params_pb2.HashAlgorithm, str]] = ...) -> None: ...
