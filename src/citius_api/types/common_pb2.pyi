@@ -1,9 +1,10 @@
 from citius_api.buf.validate import validate_pb2 as _validate_pb2
+from citius_api.types import algorithm_params_pb2 as _algorithm_params_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from collections.abc import Mapping as _Mapping
+from collections.abc import Iterable as _Iterable, Mapping as _Mapping
 from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
@@ -369,7 +370,7 @@ class UniversalSecurityProperties(_message.Message):
     def __init__(self, security_strength_bits: _Optional[int] = ..., nist_security_level: _Optional[_Union[NistSecurityLevel, str]] = ..., quantum_safe: _Optional[bool] = ..., nist_status: _Optional[_Union[NistStatus, str]] = ..., fips_approved: _Optional[bool] = ...) -> None: ...
 
 class SignatureScopeSpec(_message.Message):
-    __slots__ = ("scope", "security", "non_malleable", "deterministic", "additional_properties")
+    __slots__ = ("scope", "security", "non_malleable", "deterministic", "accepted_digest_hashes", "additional_properties")
     class AdditionalPropertiesEntry(_message.Message):
         __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -381,13 +382,15 @@ class SignatureScopeSpec(_message.Message):
     SECURITY_FIELD_NUMBER: _ClassVar[int]
     NON_MALLEABLE_FIELD_NUMBER: _ClassVar[int]
     DETERMINISTIC_FIELD_NUMBER: _ClassVar[int]
+    ACCEPTED_DIGEST_HASHES_FIELD_NUMBER: _ClassVar[int]
     ADDITIONAL_PROPERTIES_FIELD_NUMBER: _ClassVar[int]
     scope: SignatureScope
     security: UniversalSecurityProperties
     non_malleable: bool
     deterministic: bool
+    accepted_digest_hashes: _containers.RepeatedScalarFieldContainer[_algorithm_params_pb2.HashAlgorithm]
     additional_properties: _containers.ScalarMap[str, str]
-    def __init__(self, scope: _Optional[_Union[SignatureScope, str]] = ..., security: _Optional[_Union[UniversalSecurityProperties, _Mapping]] = ..., non_malleable: _Optional[bool] = ..., deterministic: _Optional[bool] = ..., additional_properties: _Optional[_Mapping[str, str]] = ...) -> None: ...
+    def __init__(self, scope: _Optional[_Union[SignatureScope, str]] = ..., security: _Optional[_Union[UniversalSecurityProperties, _Mapping]] = ..., non_malleable: _Optional[bool] = ..., deterministic: _Optional[bool] = ..., accepted_digest_hashes: _Optional[_Iterable[_Union[_algorithm_params_pb2.HashAlgorithm, str]]] = ..., additional_properties: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class AeadScopeSpec(_message.Message):
     __slots__ = ("scope", "security", "nonce_misuse_resistant", "additional_properties")

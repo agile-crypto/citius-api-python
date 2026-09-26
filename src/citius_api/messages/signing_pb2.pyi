@@ -78,7 +78,7 @@ class VerifyResponse(_message.Message):
     def __init__(self, valid: _Optional[bool] = ..., metadata: _Optional[_Union[_metadata_pb2.OperationMetadata, _Mapping]] = ...) -> None: ...
 
 class DigestSignRequest(_message.Message):
-    __slots__ = ("key_name", "digest", "no_context", "domain_context", "vendor_context", "hash_algorithm", "hash_algorithm_oid", "user_context")
+    __slots__ = ("key_name", "digest", "no_context", "domain_context", "vendor_context", "hash_algorithm", "user_context")
     class UserContextEntry(_message.Message):
         __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -92,7 +92,6 @@ class DigestSignRequest(_message.Message):
     DOMAIN_CONTEXT_FIELD_NUMBER: _ClassVar[int]
     VENDOR_CONTEXT_FIELD_NUMBER: _ClassVar[int]
     HASH_ALGORITHM_FIELD_NUMBER: _ClassVar[int]
-    HASH_ALGORITHM_OID_FIELD_NUMBER: _ClassVar[int]
     USER_CONTEXT_FIELD_NUMBER: _ClassVar[int]
     key_name: str
     digest: bytes
@@ -100,9 +99,8 @@ class DigestSignRequest(_message.Message):
     domain_context: _operation_params_pb2.SignatureDomainContext
     vendor_context: _operation_params_pb2.VendorSignatureContext
     hash_algorithm: _algorithm_params_pb2.HashAlgorithm
-    hash_algorithm_oid: str
     user_context: _containers.ScalarMap[str, str]
-    def __init__(self, key_name: _Optional[str] = ..., digest: _Optional[bytes] = ..., no_context: _Optional[_Union[_operation_params_pb2.NoParams, _Mapping]] = ..., domain_context: _Optional[_Union[_operation_params_pb2.SignatureDomainContext, _Mapping]] = ..., vendor_context: _Optional[_Union[_operation_params_pb2.VendorSignatureContext, _Mapping]] = ..., hash_algorithm: _Optional[_Union[_algorithm_params_pb2.HashAlgorithm, str]] = ..., hash_algorithm_oid: _Optional[str] = ..., user_context: _Optional[_Mapping[str, str]] = ...) -> None: ...
+    def __init__(self, key_name: _Optional[str] = ..., digest: _Optional[bytes] = ..., no_context: _Optional[_Union[_operation_params_pb2.NoParams, _Mapping]] = ..., domain_context: _Optional[_Union[_operation_params_pb2.SignatureDomainContext, _Mapping]] = ..., vendor_context: _Optional[_Union[_operation_params_pb2.VendorSignatureContext, _Mapping]] = ..., hash_algorithm: _Optional[_Union[_algorithm_params_pb2.HashAlgorithm, str]] = ..., user_context: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class DigestSignResponse(_message.Message):
     __slots__ = ("signature", "metadata")
@@ -113,7 +111,7 @@ class DigestSignResponse(_message.Message):
     def __init__(self, signature: _Optional[bytes] = ..., metadata: _Optional[_Union[_metadata_pb2.OperationMetadata, _Mapping]] = ...) -> None: ...
 
 class DigestVerifyRequest(_message.Message):
-    __slots__ = ("key_name", "digest", "signature", "metadata", "no_context", "domain_context", "vendor_context", "hash_algorithm", "hash_algorithm_oid", "user_context")
+    __slots__ = ("key_name", "digest", "signature", "metadata", "no_context", "domain_context", "vendor_context", "user_context")
     class UserContextEntry(_message.Message):
         __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
@@ -128,8 +126,6 @@ class DigestVerifyRequest(_message.Message):
     NO_CONTEXT_FIELD_NUMBER: _ClassVar[int]
     DOMAIN_CONTEXT_FIELD_NUMBER: _ClassVar[int]
     VENDOR_CONTEXT_FIELD_NUMBER: _ClassVar[int]
-    HASH_ALGORITHM_FIELD_NUMBER: _ClassVar[int]
-    HASH_ALGORITHM_OID_FIELD_NUMBER: _ClassVar[int]
     USER_CONTEXT_FIELD_NUMBER: _ClassVar[int]
     key_name: str
     digest: bytes
@@ -138,10 +134,8 @@ class DigestVerifyRequest(_message.Message):
     no_context: _operation_params_pb2.NoParams
     domain_context: _operation_params_pb2.SignatureDomainContext
     vendor_context: _operation_params_pb2.VendorSignatureContext
-    hash_algorithm: _algorithm_params_pb2.HashAlgorithm
-    hash_algorithm_oid: str
     user_context: _containers.ScalarMap[str, str]
-    def __init__(self, key_name: _Optional[str] = ..., digest: _Optional[bytes] = ..., signature: _Optional[bytes] = ..., metadata: _Optional[_Union[_metadata_pb2.OperationMetadata, _Mapping]] = ..., no_context: _Optional[_Union[_operation_params_pb2.NoParams, _Mapping]] = ..., domain_context: _Optional[_Union[_operation_params_pb2.SignatureDomainContext, _Mapping]] = ..., vendor_context: _Optional[_Union[_operation_params_pb2.VendorSignatureContext, _Mapping]] = ..., hash_algorithm: _Optional[_Union[_algorithm_params_pb2.HashAlgorithm, str]] = ..., hash_algorithm_oid: _Optional[str] = ..., user_context: _Optional[_Mapping[str, str]] = ...) -> None: ...
+    def __init__(self, key_name: _Optional[str] = ..., digest: _Optional[bytes] = ..., signature: _Optional[bytes] = ..., metadata: _Optional[_Union[_metadata_pb2.OperationMetadata, _Mapping]] = ..., no_context: _Optional[_Union[_operation_params_pb2.NoParams, _Mapping]] = ..., domain_context: _Optional[_Union[_operation_params_pb2.SignatureDomainContext, _Mapping]] = ..., vendor_context: _Optional[_Union[_operation_params_pb2.VendorSignatureContext, _Mapping]] = ..., user_context: _Optional[_Mapping[str, str]] = ...) -> None: ...
 
 class DigestVerifyResponse(_message.Message):
     __slots__ = ("valid", "metadata")
