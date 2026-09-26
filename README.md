@@ -2,8 +2,8 @@
 
 Generated Python protobuf messages and gRPC service stubs for the Citius API.
 
-This repository is generated from `agile-crypto/api@f3be1caaae6dc2d6d2e80d791418fb49e8c5a1c1`
-(`v0.2.0`). Do not edit generated files here;
+This repository is generated from `agile-crypto/api@2eb364a69b5a7ba41d3770af35248f452930a787`
+(`v0.3.0`). Do not edit generated files here;
 make schema or generation changes in `agile-crypto/api` instead.
 
 ```python
