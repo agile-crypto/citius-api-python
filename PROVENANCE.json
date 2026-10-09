@@ -10,11 +10,11 @@
   },
   "package": {
     "name": "citius-api-python",
-    "version": "0.3.0"
+    "version": "0.0.0.dev0+cdaca76e5746"
   },
   "source": {
-    "ref": "v0.3.0",
+    "ref": "main",
     "repository": "agile-crypto/api",
-    "revision": "2eb364a69b5a7ba41d3770af35248f452930a787"
+    "revision": "cdaca76e5746110ddfa3b1436ffee8865f37de58"
   }
 }
